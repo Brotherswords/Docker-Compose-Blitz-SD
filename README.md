@@ -43,4 +43,5 @@ This will build and start the containers as defined in the docker-compose.yml fi
 
 ## Accessing the Application
 - Once running, the Flask application can be accessed at http://127.0.0.1:4080 (which is mapped to the port 4090 in the container).
+- You should see a set of images, some text and a link if everything is working!
 

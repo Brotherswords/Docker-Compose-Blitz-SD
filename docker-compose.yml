@@ -1,0 +1,16 @@
+version: '3'  # Specifies the version of the Docker Compose file format
+
+services:
+  web:
+    build: .  # Builds the Docker image for the web service using the Dockerfile in the current directory
+    ports:
+      - "4080:4090"  # Maps port 4090 inside the container to port 4080 on the host, so http://127.0.0.1:4080 will display the content
+  nginx:
+    image: nginx  # Uses the official NGINX image from Docker Hub
+    ports:
+      - "80:80"  # Maps port 80 inside the container to port 80 on the host
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf  # Mounts the NGINX configuration file from the host to the container, this is just something that I'm using to serve static content (NGINX can be used for alot of other things though). This is just also added for the sake of showing docker-compose. 
+      - ./static:/static  # Mounts the static content from the host to the container which has all the images
+    depends_on:
+      - web  # Indicates that the nginx service depends on the web service

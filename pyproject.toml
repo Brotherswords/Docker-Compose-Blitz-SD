@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "docker-compose-blitz"
+version = "0.1.0"
+description = ""
+authors = ["Lavan Vivekanandasarma <lavan.vivek11@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.0"
+flask-sqlalchemy = "^3.1.1"
+psycopg2-binary = "^2.9.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
